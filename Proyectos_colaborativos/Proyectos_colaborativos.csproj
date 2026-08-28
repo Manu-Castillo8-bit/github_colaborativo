@@ -28,7 +28,7 @@
 		<MauiXamlInflator>SourceGen</MauiXamlInflator>
 
 		<!-- Display name -->
-		<ApplicationTitle>Proyectos_colaborativos</ApplicationTitle>
+		<ApplicationTitle>Conversor MXN a USD</ApplicationTitle>
 
 		<!-- App Identifier -->
 		<ApplicationId>com.companyname.proyectos_colaborativos</ApplicationId>

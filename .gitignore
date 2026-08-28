@@ -1,0 +1,32 @@
+## .NET Build artifacts
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Dd]ebug/
+[Rr]elease/
+
+## Visual Studio
+.vs/
+.vscode/
+*.user
+*.suo
+*.userprefs
+*.sln.docstates
+*.userosscache
+*.sln.ide
+
+## Rider / JetBrains
+.idea/
+
+## OS
+Thumbs.db
+.DS_Store
+
+## NuGet
+*.nupkg
+*.snupkg
+*.nupkg.metadata
+
+## Test results
+[Tt]est[Rr]esults/
+*.trx

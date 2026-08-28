@@ -1,24 +1,42 @@
-﻿namespace Proyectos_colaborativos
+﻿using System.Globalization;
+
+namespace Proyectos_colaborativos
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
+        private const double DefaultRate = 18.50;
 
         public MainPage()
         {
             InitializeComponent();
+            RateEntry.Text = DefaultRate.ToString("0.00", CultureInfo.InvariantCulture);
+            ResultLabel.Text = "—";
         }
 
-        private void OnCounterClicked(object? sender, EventArgs e)
+        private void OnConvertClicked(object? sender, EventArgs e)
         {
-            count++;
+            if (!double.TryParse(PesosEntry.Text, NumberStyles.Number, CultureInfo.InvariantCulture, out double pesos) || pesos < 0)
+            {
+                ResultLabel.Text = "Ingresa una cantidad válida.";
+                return;
+            }
 
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
+            if (!double.TryParse(RateEntry.Text, NumberStyles.Number, CultureInfo.InvariantCulture, out double tasa) || tasa <= 0)
+            {
+                ResultLabel.Text = "Ingresa un tipo de cambio válido.";
+                return;
+            }
 
-            SemanticScreenReader.Announce(CounterBtn.Text);
+            double dolares = pesos / tasa;
+            ResultLabel.Text = $"US$ {dolares:N2}";
+        }
+
+        private void OnClearClicked(object? sender, EventArgs e)
+        {
+            PesosEntry.Text = string.Empty;
+            RateEntry.Text = DefaultRate.ToString("0.00", CultureInfo.InvariantCulture);
+            ResultLabel.Text = "—";
+            PesosEntry.Focus();
         }
     }
 }
