@@ -2,11 +2,41 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Proyectos_colaborativos.Ejercicio_3"
-             Title="Ejercicio_3">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             Title="Tablas de multiplicar (1 al 10)">
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30"
+            Spacing="20">
+
+            <Label
+                Text="Tablas de multiplicar del 1 al 10"
+                Style="{StaticResource Headline}"
+                SemanticProperties.HeadingLevel="Level1" />
+
+            <Label
+                Text="Presiona el botón para generar las tablas."
+                Style="{StaticResource SubHeadline}"
+                SemanticProperties.HeadingLevel="Level2"
+                FontSize="16" />
+
+            <Button
+                x:Name="GenerateBtn"
+                Text="Generar tablas"
+                Clicked="OnGenerateClicked"
+                HorizontalOptions="Fill" />
+
+            <Border
+                StrokeThickness="0"
+                BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource PrimaryDark}}"
+                StrokeShape="RoundRectangle 12"
+                Padding="20">
+                <Label
+                    x:Name="TablesLabel"
+                    Text="—"
+                    FontSize="14"
+                    LineBreakMode="NoWrap"
+                    SemanticProperties.HeadingLevel="Level3" />
+            </Border>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
