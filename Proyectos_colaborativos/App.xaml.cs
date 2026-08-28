@@ -7,7 +7,11 @@ namespace Proyectos_colaborativos
         public App()
         {
             InitializeComponent();
+
             MainPage = new Ejercicio_2();
+
+           
+
         }
 
         

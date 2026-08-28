@@ -3,10 +3,30 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Proyectos_colaborativos.Ejercicio_4"
              Title="Ejercicio_4">
-    <VerticalStackLayout>
+    <VerticalStackLayout Padding="20" Spacing="15">
         <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
+            Text="Cálculo de Sueldo Semanal"
+            FontSize="24" 
+            FontAttributes="Bold"
+            HorizontalOptions="Center" />
+
+        <Label Text="Horas trabajadas:" FontSize="16" />
+        <Entry x:Name="HorasEntry" Placeholder="Ingrese las horas trabajadas" Keyboard="Numeric" />
+
+        <Label Text="Pago por hora (L.):" FontSize="16" />
+        <Entry x:Name="PagoEntry" Placeholder="Ingrese el pago por hora" Keyboard="Numeric" />
+
+        <Label 
+            Text="Sueldo semanal: "
+            x:Name="ResultadoLabel"
+            FontSize="22"
+            FontAttributes="Bold"
+            TextColor="Green"
+            HorizontalOptions="Center" />
+
+        <Button 
+            Text="Calcular Sueldo"
+            Clicked="OnCalcularClicked"
             HorizontalOptions="Center" />
     </VerticalStackLayout>
 </ContentPage>
