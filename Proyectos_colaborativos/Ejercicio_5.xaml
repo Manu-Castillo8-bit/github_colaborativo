@@ -3,10 +3,31 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Proyectos_colaborativos.Ejercicio_5"
              Title="Ejercicio_5">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="20" Padding="30">
+            <Label Text="Banquetes 'La Langosta Ahumada'"
+                   FontSize="22"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center" />
+
+            <Label Text="Número de personas:"
+                   FontSize="16" />
+            <Entry x:Name="txtPersonas"
+                   Placeholder="Ej. 250"
+                   Keyboard="Numeric" />
+
+            <Button Text="Calcular Presupuesto"
+                    Clicked="Button_Clicked" 
+                    BackgroundColor="Navy"
+                    TextColor="White" />
+
+            <Label x:Name="lblCostoPlatillo"
+                   FontSize="16" />
+
+            <Label x:Name="lblPresupuestoTotal"
+                   FontSize="18"
+                   FontAttributes="Bold" />
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
